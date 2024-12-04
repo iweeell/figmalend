@@ -1,0 +1,53 @@
+body {
+  font-size: 15px;
+  color: $second-color;
+  font-weight: 400;
+  font-family: "Poppins", serif;
+  line-height: 1.1;
+}
+
+.hidden {
+  position: absolute;
+  font-size: 1px;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1230px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.btn {
+  min-width: 236px;
+  padding: 16px 40px;
+  border-radius: 35px;
+  background-color: $primary-color;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $white;
+}
+
+.title {
+  font-size: 48px;
+  color: $title-color;
+  margin-bottom: 25px;
+}
+
+.subtitle {
+  font-size: 28px;
+  color: $second-color;
+  margin-bottom: 70px;
+}
+
+.section {
+  padding: 115px 0;
+}
+
+.burger-btn {
+  display: none;
+}
