@@ -10,6 +10,9 @@
   background-repeat: no-repeat;
   height: 100vh;
   color: $white;
+  overflow: hidden;
+  position: relative;
+
 }
 
 .menu {
@@ -20,9 +23,19 @@
   margin: 0 auto;
   padding-top: 50px;
 
+
   &__list {
     display: flex;
     gap: 30px;
+  }
+
+  &__link {
+    transition: color 0.3s, transform 0.5s;
+
+    &:hover {
+      color: $primary-color;
+      transform: scale(1.1);
+    }
   }
 }
 

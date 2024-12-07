@@ -1,4 +1,4 @@
-let isFirstPlay = true; // Флаг для отслеживания первого воспроизведения
+let isFirstPlay = true;
 let controlsTimeout;
 
 document.querySelector('.video-container').addEventListener('dblclick', toggleFullscreen);
@@ -11,20 +11,20 @@ function startBox() {
   }
 }
 
-// Функция запуска видео при первом клике
+
 function startVideo() {
   const video = document.getElementById('myVideo');
   const startButton = document.querySelector('.start-button');
   const controls = document.querySelector('.controls');
 
   video.play();
-  startButton.style.display = 'none'; // Скрываем центральную кнопку
-  controls.classList.remove('hidden'); // Показываем меню управления
+  startButton.style.display = 'none'; 
+  controls.classList.remove('hidden'); 
   video.style.border = '2px solid #2091F9'
   isFirstPlay = false;
 }
 
-// Переключение воспроизведения
+
 function togglePlay() {
   const video = document.getElementById('myVideo');
   const playButton = document.querySelector('.play-button');
@@ -38,14 +38,13 @@ function togglePlay() {
   }
 }
 
-// Управление громкостью
+
 function changeVolume() {
   const video = document.getElementById('myVideo');
   const volumeControl = document.getElementById('volumeControl');
   video.volume = volumeControl.value;
 }
 
-// Переключение полноэкранного режима
 function toggleFullscreen() {
   const videoContainer = document.querySelector('.video-container');
   if (!document.fullscreenElement) {
@@ -55,7 +54,6 @@ function toggleFullscreen() {
   }
 }
 
-// Автоскрытие элементов управления
 function showControls() {
   if (!isFirstPlay) {
     const controls = document.querySelector('.controls');
@@ -75,7 +73,6 @@ function hideControls() {
   }
 }
 
-// Обновление таймлайна
 function updateTimeline() {
   const video = document.getElementById('myVideo');
   const progressBar = document.querySelector('.progress-filled');
@@ -83,7 +80,7 @@ function updateTimeline() {
   progressBar.style.width = `${percent}%`;
 }
 
-// Перемотка видео при клике на таймлайне
+
 function seekVideo(event) {
   const video = document.getElementById('myVideo');
   const progressBar = document.querySelector('.progress-bar');
@@ -95,7 +92,7 @@ function seekVideo(event) {
 
 
 const video = document.getElementById('myVideo');
-video.addEventListener('timeupdate', updateTimeline); // Обновляем таймлайн
+video.addEventListener('timeupdate', updateTimeline);
 video.addEventListener('play', () => {
   document.querySelector('.play-button').classList.add('paused');
 });
@@ -103,3 +100,19 @@ video.addEventListener('play', () => {
 video.addEventListener('pause', () => {
   document.querySelector('.play-button').classList.remove('paused');
 });
+
+
+const burgerBtn = document.querySelector('.burger-btn')
+const menuList = document.querySelector('.menu__list')
+
+burgerBtn.addEventListener('click', () => {
+  menuList.classList.toggle('active');
+  document.querySelector('.header').classList.toggle('active')
+  
+  if (menuList.classList.contains('active')) {
+    document.body.style.overflow = "hidden";
+    
+  } else {
+    document.body.style.overflow = "";
+  }
+})

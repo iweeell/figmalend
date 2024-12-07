@@ -4,6 +4,7 @@ body {
   font-weight: 400;
   font-family: "Poppins", serif;
   line-height: 1.1;
+
 }
 
 .hidden {
@@ -30,6 +31,14 @@ body {
   justify-content: center;
   align-items: center;
   color: $white;
+  transition: all 0.3s;
+
+  &:hover {
+    background-color: $white;
+    color: $primary-color;
+    outline: 1px solid $primary-color;
+    box-shadow: 0 0 5px 2px $primary-color;
+  }
 }
 
 .title {
